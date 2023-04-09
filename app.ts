@@ -1,12 +1,9 @@
-import express from 'express';
-
+const express = require('express');
 const app = express();
-const port = 3000;
+const routes = require('./src/routers/routes');
 
-app.get('/', (req, res) => {
-    res.send('Hello World!');
-});
+app.use('/api', routes);
 
-app.listen(port, () => {
-    console.log(`Server listening on port ${port}.`);
+app.listen(3000, () => {
+    console.log('Server is listening on port 3000');
 });
